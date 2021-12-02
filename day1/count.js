@@ -9,7 +9,7 @@ countIncreasementsWithSum(values)
 function countIncreasements(input) {
     let increasementsCounter = 0;
     input.map((value, index) => {
-        if (parseInt(value) < parseInt(input[index + 1])) {
+        if (Number(value) < Number(input[index + 1])) {
             increasementsCounter++;
         }
     })
@@ -24,7 +24,7 @@ function countIncreasementsWithSum(input) {
     let previousSum = 0;
     let sum = 0;
     input.map((value, index) => {
-        sum = parseInt(value) + parseInt(input[index + 1]) + parseInt(input[index + 2])
+        sum = Number(value) + Number(input[index + 1]) + Number(input[index + 2])
         if (sum > previousSum && index > 0) {
             increasementsCounter++;
         }

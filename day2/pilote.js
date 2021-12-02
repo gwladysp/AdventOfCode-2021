@@ -5,11 +5,11 @@
 const reducer = (position, action) => {
     const [move, value] = action.split(" ");
     if (move === "up") {
-        position.depth -= parseInt(value);
+        position.depth -= Number(value);
     } else if (move === "down") {
-        position.depth += parseInt(value);
+        position.depth += Number(value);
     } else if (move === "forward") {
-        position.horizontal += parseInt(value);
+        position.horizontal += Number(value);
     }
     return position;
 };
@@ -30,12 +30,12 @@ console.log("Result without aim : " + position.depth * position.horizontal)
 const reducerWithAim = (position, action) => {
     const [move, value] = action.split(" ");
     if (move === "up") {
-        position.aim -= parseInt(value);
+        position.aim -= Number(value);
     } else if (move === "down") {
-        position.aim += parseInt(value);
+        position.aim += Number(value);
     } else if (move === "forward") {
-        position.horizontal += parseInt(value);
-        position.depth += position.aim * parseInt(value);
+        position.horizontal += Number(value);
+        position.depth += position.aim * Number(value);
     }
     return position;
 };
